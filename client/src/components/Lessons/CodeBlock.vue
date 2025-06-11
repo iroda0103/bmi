@@ -10,8 +10,8 @@
           <button @click="runCode" class="run-button">Ishga tushirish</button>
         </div>
         
-        <pre><code :class="`language-${selectedLanguage}`" ref="codeElement">{{ content }}</code></pre>
-        
+        <!-- <pre><code :class="`language-${selectedLanguage}`" ref="codeElement">{{ content }}</code></pre> -->
+          
         <textarea 
           ref="codeEditor"
           class="code-editor"
@@ -55,7 +55,7 @@
     props: {
       content: {
         type: String,
-        default: '// Kod yozing'
+        default: '// Kod ddddddddyozing'
       },
       language: {
         type: String,

@@ -230,11 +230,11 @@ export default {
   padding: 5rem 2rem;
   background: linear-gradient(135deg, #080808 0%, #2e2e2e 100%);
 }
-
+/* 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-}
+} */
 
 .section-header {
   display: flex;

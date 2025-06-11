@@ -80,6 +80,7 @@ export default {
 <style>
 .main-container {
   min-height: 100vh;
+  width: 100%;
   position: relative;
   /* overflow: hidden; */
   /* background-image: url('./assets/bg.jpg'); */

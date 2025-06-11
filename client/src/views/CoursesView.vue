@@ -1,5 +1,5 @@
 <template>
-    <div class="courses-container">
+    <div class="container courses-container">
         <div class="carousel-track" :style="carouselStyle">
             <Course v-for="course in courses" :course="course" :key="course.id" @click="redirectCourse(course.id)">
             </Course>

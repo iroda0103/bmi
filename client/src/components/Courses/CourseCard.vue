@@ -2,7 +2,9 @@
     <div class="course-card" data-aos="fade-up" data-aos-delay="40">
         <!-- Course image with level badge -->
         <div class="course-image-container">
-            <img src="../../assets/course_poster.jpg" :alt="course.title" class="course-image">
+            <!-- <img src="../../assets/course_poster.jpg" :alt="course.title" class="course-image"> -->
+            <img :src="(course.poster)?(`http://localhost:3000/uploads/${course.poster}`):jsimg" :alt="course.title" class="course-image">
+            
             <span class="course-level">{{ course.diffuculty }}</span>
         </div>
         
@@ -48,10 +50,20 @@
 </template>
 
 <script>
+import jsimg from '../../assets/js.png';
 export default {
     props: {
         course: Object
+    },
+    mounted() {
+       console.log('COURSE', this.course.poster);
+       
+    },
+    data() {
+    return {
+      jsimg
     }
+  }
 }
 </script>
 

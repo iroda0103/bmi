@@ -11,7 +11,6 @@
         @focus="showToolbar = true"
         @blur="showToolbar = false"
         ref="editableDiv"
-        v-html="content"
       ></div>
     </div>
   </template>
@@ -42,7 +41,10 @@
       hasFormat(format) {
         return document.queryCommandState(format);
       }
-    }
+    },
+    mounted() {
+      this.$refs.editableDiv.innerHTML = this.content;
+    },
   };
   </script>
   

@@ -6,13 +6,13 @@
         :activeTab="activeTab"
         @change-tab="changeTab" 
       />
-      <main class="main-content">
-        <TopBar :userName="user.name" :userRole="user.role" :notifications="notifications" />
+      <div class="main-content">
+        <TopBar v-if="activeTab !== 'activity'" :userName="user.name" :userRole="user.role" :notifications="notifications" />
         
         <div class="content">
           <!-- Asosiy ko'rinish -->
           <ProfileOverview v-if="activeTab === 'dashboard'" :user="user" :stats="stats" />
-          
+          <Profile2 v-if="activeTab === 'activity'" :user="user" :stats="stats" ></Profile2>
           <!-- Sozlamalar ko'rinishi -->
           <!-- <Settings v-else-if="activeTab === 'settings'" :user="user" @save-settings="saveSettings" /> -->
           
@@ -25,7 +25,7 @@
           <!-- Xabarlar ko'rinishi -->
           <!-- <Messages v-else-if="activeTab === 'messages'" :messages="messages" /> -->
         </div>
-      </main>
+      </div>
     </div>
   </template>
   
@@ -33,6 +33,7 @@
   import SideMenu from '../components/Profile/Sidebar.vue';
   import TopBar from '../components/Profile/TopBar.vue';
   import ProfileOverview from '../components/Profile/ProfileOverview.vue';
+  import Profile2 from '../views/Profile2.vue';
 //   import Settings from '../components/cards/Profile/Settings.vue';
 //   import Activity from '../components/cards/Profile/Activity.vue';
 //   import Payments from '../components/cards/Profile/Payments.vue';
@@ -43,6 +44,7 @@ export default {
       SideMenu,
       TopBar,
       ProfileOverview,
+      Profile2
     //   Settings,
     //   Activity,
     //   Payments,
@@ -53,8 +55,8 @@ export default {
         activeTab: 'dashboard',
         user: {
           id: 1,
-          name: 'Alisher Karimov',
-          email: 'alisher@example.com',
+          name: 'Iroda Muminova',
+          email: 'iroda@example.com',
           phone: '+998 90 123 45 67',
           role: 'Premium foydalanuvchi',
           address: 'Toshkent, Chilonzor tumani',
@@ -127,7 +129,7 @@ export default {
   
   .dashboard {
     display: flex;
-    min-height: 100vh;
+    /* min-height: 100vh; */
   }
   
   .main-content {

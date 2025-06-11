@@ -1,20 +1,21 @@
 <template>
   <header :class="['header', { 'header-scrolled': isScrolled }]">
-    <div class="header-container">
+    <div class="container header-container">
       <div class="logo" data-aos="fade-up">AlgoEdu</div>
       <nav class="nav">
 
         <div class="nav-links">
           <a href="/courses" data-aos="fade-up">Kurslar</a>
-          <a href="#about" data-aos="fade-up">Biz Haqimizda</a>
-          <a href="#contact" data-aos="fade-up">Aloqa</a>
-          <a href="/terminal" data-aos="fade-up">Terminal</a>
-          <a href="/chat" data-aos="fade-up">Chat</a>
+          <a href="/about" data-aos="fade-up">Biz Haqimizda</a>
+          <!-- <a href="#contact" data-aos="fade-up">Aloqa</a> -->
+          <a href="/terminal" data-aos="fade-up" v-if="isLoggin">Terminal</a>
+          <a href="/chat" data-aos="fade-up" v-if="isLoggin">Chat</a>
           <!-- <button @click="openModal" class="login-btn style-btn">Kirish</button> -->
           <button v-if="!isLoggin" @click="$emit('login')" class="login-btn style-btn"
             data-aos="fade-up">Kirish</button>
-          <button v-if="isLoggin" @click="$emit('logout')" class="login-btn style-btn"
-            data-aos="fade-up">Chiqish</button>
+          <!-- <button v-if="isLoggin" @click="$emit('logout')" class="login-btn style-btn"
+            data-aos="fade-up">Chiqish</button> -->
+          <a href="/users/me" class="avatar" v-if="isLoggin"><img src="../../assets/avatar.png" /></a>
 
         </div>
       </nav>
@@ -27,12 +28,13 @@
 <script>
 // In your Vue component
 export default {
-  props: {
-    isLoggin: Boolean
-  },
+  // props: {
+  //   isLoggin: Boolean
+  // },
   data() {
     return {
-      isScrolled: false
+      isScrolled: false,
+      isLoggin: localStorage.getItem('token') ? true : false
     }
   },
   mounted() {
@@ -103,5 +105,12 @@ export default {
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
+}
+
+.avatar img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 </style>

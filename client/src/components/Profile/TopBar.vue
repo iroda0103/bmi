@@ -70,15 +70,18 @@
   <style scoped>
   .top-bar {
     padding: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e5e7eb;
+    margin-top: 18px;
+    /* border-left: 1px solid #e5e7eb; */
   }
   
   .welcome h2 {
     margin: 0;
+    color: var(--primary-color);
   }
   
   .top-actions {

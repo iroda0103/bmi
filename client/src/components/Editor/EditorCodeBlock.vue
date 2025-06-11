@@ -24,7 +24,7 @@
     props: {
       content: {
         type: String,
-        default: '// Kod yozing'
+        default: '// Kod yodddddddddzing'
       },
       language: {
         type: String,
@@ -74,7 +74,7 @@
     position: relative;
     margin: 10px 0;
     border-radius: 4px;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   
   .code-toolbar {
@@ -107,8 +107,8 @@
     width: 100%;
     height: calc(100% - 37px);
     padding: 15px;
-    background-color: rgba(45, 45, 45, 0.3);
-    color: transparent;
+    background-color: #000;
+    color: white;
     border: none;
     resize: none;
     font-family: monospace;

@@ -1,11 +1,7 @@
 <template>
     <div class="side-menu">
-      <div class="logo">
-        <h1>MySite</h1>
-      </div>
-      
       <div class="user-profile">
-        <img :src="userImage" alt="Foydalanuvchi rasmi" class="avatar" width="70" height="70">
+        <img src="https://i.pravatar.cc/100" alt="Foydalanuvchi rasmi" class="avatar" width="70" height="70">
         <h3>{{ userName }}</h3>
       </div>
       
@@ -55,13 +51,18 @@
   <style scoped>
   .side-menu {
     width: 260px;
-    background-color: #fff;
+    /* background-color: #fff; */
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     height: 100vh;
+    border-right: 1px solid #e5e7eb;
   }
-  
+  .side-menu h3{
+    color: var(--primary-color);
+    margin-left: 15px;
+    font-weight: bold;
+  }
   .logo {
     padding: 20px;
     border-bottom: 1px solid #e5e7eb;
@@ -76,7 +77,6 @@
   .user-profile {
     padding: 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     border-bottom: 1px solid #e5e7eb;
   }
@@ -121,6 +121,7 @@
   .menu-footer {
     padding: 20px;
     border-top: 1px solid #e5e7eb;
+
   }
   
   .logout-button {

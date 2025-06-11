@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="hero">
+  <div class="">
+    <div class="container hero">
       <div class="hero-content" data-aos="fade-up">
         <h1 class="title">Zamonaviy Dasturlash Tillarini O'rganing</h1>
         <div class="cta-buttons">
@@ -15,8 +15,7 @@
 
     </div>
 
-    <!-- Features Section -->
-    <section class="features">
+    <section class="container features">
       <div class="feature-card" data-aos="fade-up" v-for="(feature, index) in features" :key="index">
         <i :class="feature.icon"></i>
         <h3>{{ feature.title }}</h3>
@@ -25,32 +24,34 @@
     </section>
 
     <div class="skills">
-      <a href="https://github.com/iroda0103/iroda0103">
-        <img
-          src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=react&animation=spin&svgfill=15d8fe">
-      </a>
-      <a href="https://github.com/iroda0103/iroda0103">
-        <img src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=typescript&svgfill=2d79c7">
-      </a>
+      <div class="container"> <a href="https://github.com/iroda0103/iroda0103">
+          <img
+            src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=react&animation=spin&svgfill=15d8fe">
+        </a>
+        <a href="https://github.com/iroda0103/iroda0103">
+          <img src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=typescript&svgfill=2d79c7">
+        </a>
 
-      <a href="https://github.com/iroda0103/iroda0103">
-        <img src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=node.js&svgfill=659b60">
-      </a>
-      <a href="https://github.com/iroda0103/iroda0103">
-        <img src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=sass&svgfill=cd6799">
-      </a>
+        <a href="https://github.com/iroda0103/iroda0103">
+          <img src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=node.js&svgfill=659b60">
+        </a>
+        <a href="https://github.com/iroda0103/iroda0103">
+          <img src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=sass&svgfill=cd6799">
+        </a>
 
-      <a href="https://github.com/iroda0103/iroda0103">
-        <img
-          src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=react&animation=spin&svgfill=15d8fe">
-      </a>
-      <a href="https://github.com/iroda0103/iroda0103">
-        <img src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=typescript&svgfill=2d79c7">
-      </a>
-      <a href="https://github.com/iroda0103/iroda0103">
-        <img
-          src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=react&animation=spin&svgfill=15d8fe">
-      </a>
+        <a href="https://github.com/iroda0103/iroda0103">
+          <img
+            src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=react&animation=spin&svgfill=15d8fe">
+        </a>
+        <a href="https://github.com/iroda0103/iroda0103">
+          <img src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=typescript&svgfill=2d79c7">
+        </a>
+        <a href="https://github.com/iroda0103/iroda0103">
+          <img
+            src="https://readme-components.vercel.app/api?component=logo&fill=black&logo=react&animation=spin&svgfill=15d8fe">
+        </a>
+      </div>
+
 
     </div>
 
@@ -147,8 +148,10 @@ export default {
 }
 
 .style-btn {
-  background: linear-gradient(130deg, #00ff00, #00ffff) !important;
-
+  /* background: linear-gradient(130deg, #00ff00, #00ffff) !important; */
+  background: linear-gradient(90deg, #0f0, #0c2e0c);
+  background-clip: border-box;
+  border: 1px solid #5b5858;
 }
 
 .hero {
@@ -157,7 +160,7 @@ export default {
   align-items: center;
   padding: 4rem;
   /* min-height: 80vh; */
-  margin: 115px 50px 20px 50px;
+  /* margin: 115px 50px 20px 50px; */
   border-radius: 50px;
   /* background: rgba(0, 0, 0, 0.774); */
 }
@@ -189,21 +192,21 @@ export default {
 .primary-btn,
 .secondary-btn {
   padding: 1rem 2rem;
-  border-radius: 25px;
+  border-radius: 30px;
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.primary-btn {
+/* .primary-btn {
   background: #00ff00;
   border: none;
   color: black;
-}
+} */
 
 .secondary-btn {
   background: transparent;
-  border: 2px solid #00ff00;
+  border: 2px solid #00c400;
   color: white;
 }
 
@@ -276,31 +279,4 @@ export default {
   flex-wrap: nowrap;
 }
 
-
-
-.login-btn {
-  padding: 0.5rem 1.5rem;
-  border: 2px solid #00ff00;
-  border-radius: 25px;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.login-btn:hover {
-  background: #00ff00;
-  color: black;
-}
-
-
-.login-btn {
-  padding: 10px 20px;
-  background: #42b983;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
 </style>

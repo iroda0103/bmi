@@ -3,11 +3,11 @@
     <div class="modal-content" @click.stop>
       <span class="close-btn" @click="$emit('close')">&times;</span>
       <h2 class="logo">Sign In</h2>
-      
+
       <div v-if="userStore.error" class="error-message">
         {{ userStore.error }}
       </div>
-      
+
       <form @submit.prevent="handleSubmit">
         <div class="form-group">
           <label>Username</label>
@@ -17,11 +17,7 @@
           <label>Password</label>
           <input type="password" v-model="credentials.password" required>
         </div>
-        <button 
-          type="submit" 
-          class="submit-btn style-btn" 
-          :disabled="userStore.loading"
-        >
+        <button type="submit" class="submit-btn style-btn" :disabled="userStore.loading">
           {{ userStore.loading ? 'Loading...' : 'Sign In' }}
         </button>
       </form>
@@ -40,12 +36,12 @@ export default {
   setup(props, { emit }) {
     const userStore = useUserStore();
     const router = useRouter();
-    
+
     const credentials = reactive({
       username: '',
       password: ''
     });
-    
+
     const handleSubmit = async () => {
       try {
         await userStore.login(credentials);
@@ -56,7 +52,7 @@ export default {
         console.error('Login failed');
       }
     };
-    
+
     return {
       userStore,
       credentials,
@@ -82,28 +78,19 @@ export default {
 
 <style>
 .login-btn {
-  padding: 0.5rem 1.5rem;
-  border: 2px solid #00ff00;
-  border-radius: 25px;
-  background: transparent;
-  color: white;
-  cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.login-btn:hover {
-  background: #00ff00;
-  color: black;
-}
-
-.login-btn {
+  background: linear-gradient(90deg, #0f0, #0c2e0c);
+  background-clip: border-box;
+  border: 1px solid #5b5858;
   padding: 10px 20px;
-  background: #42b983;
   color: white;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+}
+
+.login-btn:hover {
+  transform:scale(3)
 }
 
 .modal-overlay {
@@ -112,7 +99,6 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: rgba(0, 0, 0, 0.5); */
   background: rgba(12, 12, 12, 0.767);
   display: flex;
   justify-content: center;
