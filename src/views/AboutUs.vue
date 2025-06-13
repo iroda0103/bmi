@@ -2,12 +2,11 @@
   <section class="container about-container">
     <h1 class="title">Biz haqimizda</h1>
     <p class="description">
-      Biz yosh va innovatsion jamoamiz, texnologiya orqali jamiyatga foydali yechimlar yaratishga intilamiz.
-      Platformamiz orqali foydalanuvchilarga interaktiv ta'lim, samarali vositalar va foydali ma'lumotlar taqdim etamiz.
+{{ aboutText }}
     </p>
 
     <div class="team">
-      <h2 class="subtitle">Jamoamiz</h2>
+      <!-- <h2 class="subtitle">Jamoamiz</h2> -->
       <div class="member">
         <i class="fas fa-user-circle icon"></i>
         <div>
@@ -15,12 +14,29 @@
           <p class="role">Frontend Developer & Dizayner & Backend Developer</p>
         </div>
       </div>
-  
+
     </div>
   </section>
 </template>
 
-<script setup>
+<script>
+export default {
+  name: 'AboutUs',
+  data() {
+    return {
+      aboutText: `    AlgoEdu — bu innovatsion raqamli ta'lim platformasi bo‘lib, zamonaviy texnologiyalar orqali o‘quvchilarga, talabalar va IT sohasi enthusiastlariga sifatli va interaktiv ta’lim imkoniyatlarini taqdim etadi. Biz jamoamiz bilan texnologiya va ta’limni uyg‘unlashtirib, har bir foydalanuvchining bilim olish jarayonini qiziqarli, samarali va individual tarzda tashkil qilishga intilamiz.
+
+Platformamiz quyidagi imkoniyatlarni taklif etadi:
+    👨‍🏫 Interaktiv onlayn kurslar va darsliklar (algoritmlar, dasturlash, sun'iy intellekt va boshqa yo‘nalishlarda)
+    💬 Real vaqtda muloqot qilish imkonini beruvchi chat tizimi
+    🖥️ Kod yozish va sinab ko‘rish uchun terminal muhiti
+    🎯 Foydalanuvchi yutuqlari va faoliyat statistikasi asosida progressni kuzatish
+    📚 Resurslar kutubxonasi: maqolalar, video darslar, testlar va interaktiv topshiriqlar
+
+Bizning maqsadimiz — har bir foydalanuvchiga mustahkam bilim va amaliy ko‘nikmalar berib, ularning kasbiy o‘sishiga zamin yaratishdir. AlgoEdu — bu nafaqat o‘rganish, balki o‘zini rivojlantirish va jamoa bilan o‘sish platformasi.`
+    };
+  }
+};
 // FontAwesome ni ishga tushirish uchun public/index.html yoki App.vue da CDN link qo‘shish kerak:
 // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </script>
@@ -48,7 +64,8 @@
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 40px;
-  text-align: center;
+  /* text-align: center; */
+    white-space: pre-line;
 }
 
 .subtitle {
@@ -82,7 +99,7 @@
 .name {
   font-size: 20px;
   margin: 0;
-  color:var(--color-primary);
+  color: var(--color-primary);
 }
 
 .role {

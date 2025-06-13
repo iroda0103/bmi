@@ -44,7 +44,7 @@ export default {
       showModal: false,
       email: '',
       password: '',
-      isLoggin: false
+      isLoggin:localStorage.getItem('token')?true: false
     }
   },
   mounted() {
@@ -55,13 +55,15 @@ export default {
       this.showModal = true
 
       console.log('test', this.showModal);
-
+     
     },
     closeModal() {
       this.showModal = false
       const token = localStorage.getItem('token');
       if (token) {
         this.isLoggin = true
+        console.log(this.isLoggin);
+        
       }
     },
     // handleSubmit() {

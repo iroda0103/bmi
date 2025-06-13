@@ -8,6 +8,7 @@
           <a href="/courses" data-aos="fade-up">Kurslar</a>
           <a href="/about" data-aos="fade-up">Biz Haqimizda</a>
           <!-- <a href="#contact" data-aos="fade-up">Aloqa</a> -->
+          <a href="/arena" data-aos="fade-up" v-if="isLoggin">Arena</a>
           <a href="/terminal" data-aos="fade-up" v-if="isLoggin">Terminal</a>
           <a href="/chat" data-aos="fade-up" v-if="isLoggin">Chat</a>
           <!-- <button @click="openModal" class="login-btn style-btn">Kirish</button> -->
@@ -28,13 +29,13 @@
 <script>
 // In your Vue component
 export default {
-  // props: {
-  //   isLoggin: Boolean
-  // },
+  props: {
+    isLoggin: Boolean
+  },
   data() {
     return {
       isScrolled: false,
-      isLoggin: localStorage.getItem('token') ? true : false
+      // isLoggin: localStorage.getItem('token') ? true : false
     }
   },
   mounted() {

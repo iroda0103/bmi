@@ -4,7 +4,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AppMain from '../components/layout/AppMain.vue';
 import Courses from '../views/CoursesView.vue';
 import Course from '../views/CourseView.vue';
-import Terminal from '../views/Terminal.vue';
+// import Terminal from '../views/Terminal.vue';
+import Terminal from '../components/Terminal/Terminal2.vue';
 import Chatbox from '../components/cards/Chatbox.vue';
 import Editor from '../components/layout/Editor.vue';
 import EditorApp from '../views/EditorApp.vue';
@@ -15,6 +16,7 @@ import AssignmentComponent from '../components/AssignmentComponent/AssignmentCom
 import Voice from '../components/Voice/Voice.vue';
 import Lesson1 from '../components/Lessons/Lesson1.vue';
 import AboutUs from '../views/AboutUs.vue';
+import Arena from '../views/Arena.vue';
 
 const routes = [
   { path: '/', component: AppMain },
@@ -30,6 +32,8 @@ const routes = [
   { path: '/assignment', component: AssignmentComponent },
   { path: '/voice', component: Voice },
   { path: '/about', component: AboutUs },
+  { path: '/arena', component: Arena },
+  
 ]
 
 const router = createRouter({

@@ -4,8 +4,8 @@
       <div class="hero-content" data-aos="fade-up">
         <h1 class="title">Zamonaviy Dasturlash Tillarini O'rganing</h1>
         <div class="cta-buttons">
-          <button class="primary-btn style-btn">Bepul Boshlash</button>
-          <button class="secondary-btn">Ko'proq Ma'lumot</button>
+          <button @click="startFreeTrial" class="primary-btn style-btn">Bepul Boshlash</button>
+          <button @click="getMoreInfo" class="secondary-btn">Ko'proq Ma'lumot</button>
         </div>
       </div>
 
@@ -125,6 +125,12 @@ export default {
       }
 
       animate()
+    },
+    startFreeTrial() {
+      this.$router.push('/courses')
+    },
+    getMoreInfo() {
+      this.$router.push('/about')
     }
   }
 }

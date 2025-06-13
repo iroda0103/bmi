@@ -1,10 +1,6 @@
 # Node
 node_modules/
-npm-debug.log*
 
-# Build
-dist/
-build/
 
 # Environment
 .env
@@ -13,7 +9,3 @@ build/
 # Editor
 .vscode/
 .idea/
-
-# OS
-.DS_Store
-Thumbs.db
